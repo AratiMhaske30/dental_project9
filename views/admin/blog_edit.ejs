@@ -1,0 +1,33 @@
+<%- include('header.ejs');  %>
+      <main class="dashboard-content">
+        <div class="container-fluid px-3 px-lg-4 py-4">
+          <div class="page-heading">
+            <div class="page-heading-copy">
+              <span class="page-icon"><i class="bi bi-file-earmark" aria-hidden="true"></i></span>
+              <div>
+                <p class="eyebrow mb-1">Starter</p>
+                <h1 class="h3 mb-1">Blog Update</h1>
+                <p class="text-muted mb-0">A clean starter page for new admin screens.</p>
+              </div>
+            </div>   
+          </div>
+          <section class="panel">
+                <form action="/admin/Blog_edit_save/<%=data.bid %>/<%=data.bphoto %>" method="post" enctype="multipart/form-data">
+                    <label>Photo</label>
+                    <input type="file" class="form-control mb-4" name="bphoto"/>
+                    <img src="/images/<%=data.bphoto %>" height="100px" /><br>
+                    <label>Date</label>
+<input type="text" name="bdate" class="form-control" value="<%= data.bdate ? new Date(data.bdate).toISOString().split('T')[0]: '' %>">
+                    <label>Title</label>
+                    <input type="text" class="form-control mb-4" name="btitle" value="<%=data.btitle %>"/>
+                    <label>Description</label>
+                    <textarea class="form-control mb-4" name="bdesc"><%=data.bdesc %></textarea>
+                    <button class="btn btn-primary">Update</button>
+                </form>
+    
+          </section>
+        </div>
+      </main>
+      <%- include('footer.ejs'); %>
+
+    

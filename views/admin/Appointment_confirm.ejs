@@ -1,0 +1,40 @@
+<%- include('header.ejs');  %>
+      <main class="dashboard-content">
+        <div class="container-fluid px-3 px-lg-4 py-4">
+          <div class="page-heading">
+            <div class="page-heading-copy">
+              <span class="page-icon"><i class="bi bi-file-earmark" aria-hidden="true"></i></span>
+              <div>
+                <p class="eyebrow mb-1">Starter</p>
+                <h1 class="h3 mb-1">Appointment</h1>
+                <p class="text-muted mb-0">A clean starter page for new admin screens.</p>
+              </div>
+            </div>   
+          </div>
+          <section class="panel">
+                <table class="table table-border mt-5">
+                 <tr>
+                <th>Sr.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Service Name</th>
+                <th>Appointment Date</th>
+                <th>Status</th>
+                 </tr>
+                <% for(var i=0; i<data.length; i++){ %>
+                  <tr>
+                <td><%= i + 1 %></td>
+                <td><%= data[i].name %></td>
+                <td><%= data[i].email %></td>
+                <td><%= data[i].service_name %></td>
+                <td><%= new Date(data[i].appointment_date).toISOString().split('T')[0] %></td>
+                <td><%= data[i].status %></td>
+          </tr>
+        <% } %>
+        </table>
+          </section>
+        </div>
+      </main>
+      <%- include('footer.ejs'); %>
+
+    

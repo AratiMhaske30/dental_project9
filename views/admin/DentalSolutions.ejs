@@ -1,0 +1,46 @@
+<%- include('header.ejs');  %>
+      <main class="dashboard-content">
+        <div class="container-fluid px-3 px-lg-4 py-4">
+          <div class="page-heading">
+            <div class="page-heading-copy">
+              <span class="page-icon"><i class="bi bi-file-earmark" aria-hidden="true"></i></span>
+              <div>
+                <p class="eyebrow mb-1">Starter</p>
+                <h1 class="h3 mb-1">DentalSolutions</h1>
+                <p class="text-muted mb-0">A clean starter page for new admin screens.</p>
+              </div>
+            </div>   
+          </div>
+          <section class="panel">
+                <form action="/admin/DentalSolutions_save" method="post">
+                    <label>Title</label>
+                    <input type="text" class="form-control mb-4" name="title" />
+                    <label>Description</label>
+                    <textarea class="form-control mb-4" name="desc"></textarea>
+                    <button class="btn btn-primary">Save</button>
+                </form>
+                <table class="table table-border mt-5">
+                 <tr>
+                <th>Sr.No</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Status</th>
+                 </tr>
+                <% for(var i=0; i<data.length; i++){ %>
+                  <tr>
+                <td><%= i + 1 %></td>
+                <td><%= data[i].title %></td>
+                <td><%= data[i].description %></td>
+                <td>
+              <a href="/admin/DentalSolutions_edit/<%= data[i].ds_id;  %>"><button class="btn">Edit</button></a>
+              <a href="/admin/DentalSolutions_delete/<%= data[i].ds_id;  %>"><button class="btn">Delete</button></a>
+             </td>
+          </tr>
+        <% } %>
+        </table>
+          </section>
+        </div>
+      </main>
+      <%- include('footer.ejs'); %>
+
+    

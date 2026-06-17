@@ -1,0 +1,56 @@
+<%- include('header.ejs');  %>
+      <main class="dashboard-content">
+        <div class="container-fluid px-3 px-lg-4 py-4">
+          <div class="page-heading">
+            <div class="page-heading-copy">
+              <span class="page-icon"><i class="bi bi-file-earmark" aria-hidden="true"></i></span>
+              <div>
+                <p class="eyebrow mb-1">Starter</p>
+                <h1 class="h3 mb-1">Blog</h1>
+                <p class="text-muted mb-0">A clean starter page for new admin screens.</p>
+              </div>
+            </div>   
+          </div>
+          <section class="panel">
+                <form action="/admin/Blog_save" method="post" enctype="multipart/form-data">
+                    <label>Photo</label>
+                    <input type="file" class="form-control mb-4" name="bphoto" />
+                    <label>Date</label>
+                    <input type="date" class="form-control mb-4" name="bdate" />
+                    <label>Title</label>
+                    <input type="text" class="form-control mb-4" name="btitle" />
+                    <label>Description</label>
+                    <textarea class="form-control mb-4" name="bdesc"></textarea>
+                    <button class="btn btn-primary">Save</button>
+                </form>
+                <table class="table table-border mt-5">
+                 <tr>
+                <th>Sr.No</th>
+                <th>Image</th>
+                <th>Date</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Status</th>
+                 </tr>
+                <% for(var i=0; i<data.length; i++){ %>
+                  <tr>
+                <td><%= i + 1 %></td>
+                <td>
+                    <img src="/images/<%= data[i].bphoto %>" height="70px">
+                </td>
+                <td><%= data[i].bdate %></td>
+                <td><%= data[i].btitle %></td>
+                <td><%= data[i].bdesc %></td>
+                <td>
+              <a href="/admin/blog_edit/<%= data[i].bid;  %>"><button class="btn">Edit</button></a>
+              <a href="/admin/blog_delete/<%= data[i].bid;  %>/<%= data[i].bphoto;  %>"><button class="btn">Delete</button></a>
+             </td>
+          </tr>
+        <% } %>
+        </table>
+          </section>
+        </div>
+      </main>
+      <%- include('footer.ejs'); %>
+
+    

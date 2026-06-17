@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="adminHMD professional admin dashboard template">
+  <title>Blank | adminHMD</title>
+
+  <link rel="stylesheet" href="/admin/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/admin/assets/vendors/bootstrap-icons/bootstrap-icons.css">
+  <link rel="stylesheet" href="/admin/assets/css/style.css">
+</head>
+<body>
+  <div class="admin-shell">
+    <div class="sidebar-backdrop" data-sidebar-close></div>
+
+    <aside class="admin-sidebar" id="adminSidebar" aria-label="Main navigation">
+      <div class="sidebar-header">
+        <a class="brand-mark" href="index-2.html" aria-label="adminHMD dashboard">
+          <span class="brand-icon"><i class="bi bi-grid-1x2-fill" aria-hidden="true"></i></span>
+          <span class="brand-copy">
+            <span class="brand-title">adminHMD</span>
+            <span class="brand-subtitle">Admin Template</span>
+          </span>
+        </a>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-link" href="/admin/index">
+          <span class="nav-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></span>
+          <span class="nav-text">Dashboard</span>
+        </a>
+        <a class="nav-link" href="/admin/DentalSolutions">
+          <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+          <span class="nav-text">DentalSolutions</span>
+        </a>
+         <a class="nav-link" href="/admin/Blog">
+          <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+          <span class="nav-text">Blog</span>
+        </a>
+          <a class="nav-link" href="/admin/Appointment_pending">
+          <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+          <span class="nav-text">Pending Appointment</span>
+        </a>
+          <a class="nav-link" href="/admin/Appointment_confirm">
+          <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+          <span class="nav-text">Confirm Appointment</span>
+        </a>
+         </a>
+          <a class="nav-link" href="/admin/Appointment_reject">
+          <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+          <span class="nav-text">Reject Appointment</span>
+          </a>
+      </nav>
+
+  
+
+      <div class="sidebar-footer">
+        <span class="status-dot"></span>
+        <span class="sidebar-footer-text">System running smoothly</span>
+      </div>
+    </aside>
+
+    <div class="admin-main">
+      <nav class="navbar admin-navbar navbar-expand bg-white">
+        <div class="container-fluid px-3 px-lg-4">
+          <button class="sidebar-toggle" type="button" data-sidebar-toggle aria-controls="adminSidebar" aria-expanded="true" aria-label="Toggle sidebar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="navbar-actions ms-auto">
+            <div class="dropdown">
+              <div class="dropdown-menu dropdown-menu-end notification-menu">
+                <div class="dropdown-header fw-bold text-body">Notifications</div>
+                <a class="dropdown-item" href="users.html">
+                  <span class="notification-title">New user registered</span>
+                  <span class="notification-time">4 minutes ago</span>
+                </a>
+                <a class="dropdown-item" href="charts.html">
+                  <span class="notification-title">Revenue target reached</span>
+                  <span class="notification-time">32 minutes ago</span>
+                </a>
+                <a class="dropdown-item" href="settings.html">
+                  <span class="notification-title">Security review completed</span>
+                  <span class="notification-time">1 hour ago</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="dropdown">
+              <button class="profile-button dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <!-- <img class="avatar-img avatar-sm" src="/admin/assets/images/avatar/avatar.jpg" alt="Admin Hasan"> -->
+                <span class="profile-name1 d-none d-sm-inline"><%=session.admin_name %></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/admin/logout">Sign out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>

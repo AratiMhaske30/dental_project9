@@ -1,0 +1,87 @@
+<%- include('header.ejs') %>
+        <!-- Hero Section -->
+        <section class="hero-section d-flex align-items-center">
+            <div class="container text-center">
+
+                <h1 class="hero-title">
+                    Dental Solutions & Treatment Care
+                </h1>
+
+                <p class="hero-text">
+                    We provide comprehensive and reliable treatment solutions
+                    for a wide range of dental problems.
+                </p>
+
+                <a href="#" class="btn hero-btn px-5 py-2">
+                    Book an Appointment
+                </a>
+
+            </div>
+        </section>
+        <!-- Dental Solutions Section -->
+        <section class="container py-5">
+
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Dental Solutions</h2>
+                <p class="text-muted">
+                    Effective treatment options for common dental problems.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                 <% for(var i=0;i<data.length;i++){ %>
+             <div class="col-md-4">
+                    <div class="solution-card">
+                        <div class="solution-icon">
+                            <i class="bi bi-emoji-frown"></i>
+                        </div>
+
+                        <h5 class="fw-bold"><%= data[i].title %></h5>
+
+                        <p>
+                            <%= data[i].description %>
+                        </p>
+
+                        <a href="#" class="solution-link">Learn More</a>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+
+        </section>
+        <!--appointment container-->
+        <section class="container my-5">
+
+            <div class="row align-items-stretch g-0 no-gap">
+
+                <!-- Text Column (With Background & Circles) -->
+                <div class="col-md-7">
+                    <div class="appointment-box p-5">
+
+                        <h3 class="fw-bold text-white">
+                            Not sure which treatment suits your case?
+                        </h3>
+
+                        <p class="text-white-50">
+                            Book a consultation and our doctors will guide you
+                            to the best solution.
+                        </p>
+
+                        <a class="btn btn-light px-4 fw-semibold">
+                            Book an Appointment
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Image Column -->
+                <div class="col-md-5">
+                    <img
+                        src="web/img/solutions1.jpg"
+                        class="equal-img">
+                </div>
+
+            </div>
+
+        </section>
+      <%- include('footer.ejs') %>
